@@ -1,0 +1,6 @@
+framework module Pods_TwitterClientTests {
+  umbrella header "Pods-TwitterClientTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
