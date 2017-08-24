@@ -6,6 +6,10 @@ target 'TwitterClient' do
   use_frameworks!
 
   # Pods for TwitterClient
+  
+  pod 'TwitterKit'
+  
+  
 
   target 'TwitterClientTests' do
     inherit! :search_paths

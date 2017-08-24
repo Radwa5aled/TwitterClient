@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0CC8B2E7BE282766A0286755 /* Pods_TwitterClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439AA57248AE4D8340C15269 /* Pods_TwitterClientTests.framework */; };
 		76109A41C670D474FA4344E6 /* Pods_TwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E229CBFD57EAD3B7D576275 /* Pods_TwitterClientUITests.framework */; };
+		CE22EEBD1F4E54E100DB965E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22EEBC1F4E54E100DB965E /* Constants.swift */; };
 		CE64E6B41F4B65750078E79A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64E6B31F4B65750078E79A /* AppDelegate.swift */; };
 		CE64E6B61F4B65750078E79A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64E6B51F4B65750078E79A /* ViewController.swift */; };
 		CE64E6B91F4B65750078E79A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64E6B71F4B65750078E79A /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		6A14E0835283C50FBD64768A /* Pods-TwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientTests/Pods-TwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		8757E824396B669C1A8F2676 /* Pods-TwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientTests/Pods-TwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E229CBFD57EAD3B7D576275 /* Pods_TwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE22EEBC1F4E54E100DB965E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE64E6B01F4B65750078E79A /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE64E6B31F4B65750078E79A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE64E6B51F4B65750078E79A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +104,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE22EEBB1F4E54B800DB965E /* SupportClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CE22EEBC1F4E54E100DB965E /* Constants.swift */,
+			);
+			path = SupportClasses;
+			sourceTree = "<group>";
+		};
 		CE64E6A71F4B65750078E79A = {
 			isa = PBXGroup;
 			children = (
+				CE22EEBB1F4E54B800DB965E /* SupportClasses */,
 				CE64E6B21F4B65750078E79A /* TwitterClient */,
 				CE64E6C71F4B65760078E79A /* TwitterClientTests */,
 				CE64E6D21F4B65760078E79A /* TwitterClientUITests */,
@@ -451,6 +462,7 @@
 			files = (
 				CE64E6B61F4B65750078E79A /* ViewController.swift in Sources */,
 				CE64E6B41F4B65750078E79A /* AppDelegate.swift in Sources */,
+				CE22EEBD1F4E54E100DB965E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +719,7 @@
 				CE64E6DA1F4B65760078E79A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE64E6DB1F4B65760078E79A /* Build configuration list for PBXNativeTarget "TwitterClientTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +728,7 @@
 				CE64E6DD1F4B65760078E79A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE64E6DE1F4B65760078E79A /* Build configuration list for PBXNativeTarget "TwitterClientUITests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +737,7 @@
 				CE64E6E01F4B65760078E79A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
