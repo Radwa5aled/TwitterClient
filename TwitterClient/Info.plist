@@ -17,8 +17,7 @@
             <string>twitter</string>
             <string>twitterauth</string>
         </array>
-    
-    
+        
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
