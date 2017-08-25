@@ -10,6 +10,7 @@ target 'TwitterClient' do
   pod 'TwitterKit'
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
+  pod 'NVActivityIndicatorView'
   
 
   target 'TwitterClientTests' do

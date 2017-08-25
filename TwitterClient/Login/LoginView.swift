@@ -10,9 +10,7 @@ import Foundation
 import TwitterKit
 
 protocol LoginView: NSObjectProtocol {
-//    func startLoading()
-//    func finishLoading()
-    func addLoginBtn (btnLogin:TWTRLogInButton)
+    
     func sentSuccess(session: TWTRSession)
     func sentFailed(error: Error?)
     

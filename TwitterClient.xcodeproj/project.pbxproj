@@ -20,6 +20,17 @@
 		CE8AE0461F5055A1002DA9F7 /* AccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0451F5055A1002DA9F7 /* AccessLayer.swift */; };
 		CE8AE04A1F505FFD002DA9F7 /* ModFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0481F505FFD002DA9F7 /* ModFollowers.swift */; };
 		CE8AE04B1F505FFD002DA9F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0491F505FFD002DA9F7 /* User.swift */; };
+		CE8AE04E1F5091CA002DA9F7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE04D1F5091CA002DA9F7 /* SplashViewController.swift */; };
+		CE8AE0501F5091E7002DA9F7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE04F1F5091E7002DA9F7 /* SplashView.swift */; };
+		CE8AE0521F5091FC002DA9F7 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0511F5091FC002DA9F7 /* SplashPresenter.swift */; };
+		CE8AE0551F50AD2B002DA9F7 /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0541F50AD2B002DA9F7 /* TransitionSubmitButton.swift */; };
+		CE8AE0571F50B040002DA9F7 /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0561F50B040002DA9F7 /* SpinerLayer.swift */; };
+		CE8AE05C1F50B088002DA9F7 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0581F50B088002DA9F7 /* BubbleTransition.swift */; };
+		CE8AE05D1F50B088002DA9F7 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0591F50B088002DA9F7 /* CGRectEx.swift */; };
+		CE8AE05E1F50B088002DA9F7 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE05A1F50B088002DA9F7 /* FadeTransition.swift */; };
+		CE8AE05F1F50B088002DA9F7 /* TimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE05B1F50B088002DA9F7 /* TimerEx.swift */; };
+		CE8AE0611F50C1CD002DA9F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0601F50C1CD002DA9F7 /* Extensions.swift */; };
+		CE8AE0641F50C41B002DA9F7 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AE0631F50C41B002DA9F7 /* FollowersViewController.swift */; };
 		CEC8445B1F5032F700219B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445A1F5032F700219B2D /* Constants.swift */; };
 		CEC844601F50333700219B2D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445D1F50333700219B2D /* LoginPresenter.swift */; };
 		CEC844611F50333700219B2D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445E1F50333700219B2D /* LoginView.swift */; };
@@ -71,6 +82,17 @@
 		CE8AE0451F5055A1002DA9F7 /* AccessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessLayer.swift; sourceTree = "<group>"; };
 		CE8AE0481F505FFD002DA9F7 /* ModFollowers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModFollowers.swift; sourceTree = "<group>"; };
 		CE8AE0491F505FFD002DA9F7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE8AE04D1F5091CA002DA9F7 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		CE8AE04F1F5091E7002DA9F7 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		CE8AE0511F5091FC002DA9F7 /* SplashPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		CE8AE0541F50AD2B002DA9F7 /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
+		CE8AE0561F50B040002DA9F7 /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
+		CE8AE0581F50B088002DA9F7 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
+		CE8AE0591F50B088002DA9F7 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		CE8AE05A1F50B088002DA9F7 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		CE8AE05B1F50B088002DA9F7 /* TimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEx.swift; sourceTree = "<group>"; };
+		CE8AE0601F50C1CD002DA9F7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CE8AE0631F50C41B002DA9F7 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		CEC8445A1F5032F700219B2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC8445D1F50333700219B2D /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CEC8445E1F50333700219B2D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -148,10 +170,13 @@
 		CE64E6B21F4B65750078E79A /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				CE8AE04C1F509195002DA9F7 /* Splash */,
 				CEC8445C1F50333700219B2D /* Login */,
+				CE8AE0621F50C402002DA9F7 /* Followers */,
 				CEC844591F5032F700219B2D /* SupportClasses */,
+				CE8AE0531F50AD11002DA9F7 /* HelperClasses */,
 				CE8AE0471F505FC0002DA9F7 /* Models */,
-				CE6D05011F4E6E630021536B /* Views */,
+				CE6D05011F4E6E630021536B /* Storyboards */,
 				CE64E6B31F4B65750078E79A /* AppDelegate.swift */,
 				CE64E6B51F4B65750078E79A /* ViewController.swift */,
 				CE64E6BA1F4B65750078E79A /* Assets.xcassets */,
@@ -178,13 +203,13 @@
 			path = TwitterClientUITests;
 			sourceTree = "<group>";
 		};
-		CE6D05011F4E6E630021536B /* Views */ = {
+		CE6D05011F4E6E630021536B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				CE64E6B71F4B65750078E79A /* Main.storyboard */,
 				CE64E6BC1F4B65760078E79A /* LaunchScreen.storyboard */,
 			);
-			name = Views;
+			name = Storyboards;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -197,6 +222,37 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CE8AE04C1F509195002DA9F7 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CE8AE04D1F5091CA002DA9F7 /* SplashViewController.swift */,
+				CE8AE04F1F5091E7002DA9F7 /* SplashView.swift */,
+				CE8AE0511F5091FC002DA9F7 /* SplashPresenter.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		CE8AE0531F50AD11002DA9F7 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CE8AE0581F50B088002DA9F7 /* BubbleTransition.swift */,
+				CE8AE0591F50B088002DA9F7 /* CGRectEx.swift */,
+				CE8AE05A1F50B088002DA9F7 /* FadeTransition.swift */,
+				CE8AE05B1F50B088002DA9F7 /* TimerEx.swift */,
+				CE8AE0561F50B040002DA9F7 /* SpinerLayer.swift */,
+				CE8AE0541F50AD2B002DA9F7 /* TransitionSubmitButton.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		CE8AE0621F50C402002DA9F7 /* Followers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8AE0631F50C41B002DA9F7 /* FollowersViewController.swift */,
+			);
+			path = Followers;
+			sourceTree = "<group>";
+		};
 		CEC844591F5032F700219B2D /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +260,7 @@
 				CEC844631F5034DA00219B2D /* NetworkHelper.swift */,
 				CEC844651F503CAF00219B2D /* Utilities.swift */,
 				CE8AE0451F5055A1002DA9F7 /* AccessLayer.swift */,
+				CE8AE0601F50C1CD002DA9F7 /* Extensions.swift */,
 			);
 			path = SupportClasses;
 			sourceTree = "<group>";
@@ -378,11 +435,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -532,16 +591,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8AE04A1F505FFD002DA9F7 /* ModFollowers.swift in Sources */,
+				CE8AE0521F5091FC002DA9F7 /* SplashPresenter.swift in Sources */,
 				CEC844641F5034DA00219B2D /* NetworkHelper.swift in Sources */,
+				CE8AE05C1F50B088002DA9F7 /* BubbleTransition.swift in Sources */,
+				CE8AE05D1F50B088002DA9F7 /* CGRectEx.swift in Sources */,
 				CEC844621F50333700219B2D /* LoginViewController.swift in Sources */,
+				CE8AE0641F50C41B002DA9F7 /* FollowersViewController.swift in Sources */,
+				CE8AE04E1F5091CA002DA9F7 /* SplashViewController.swift in Sources */,
 				CE8AE0461F5055A1002DA9F7 /* AccessLayer.swift in Sources */,
 				CEC844601F50333700219B2D /* LoginPresenter.swift in Sources */,
 				CE64E6B61F4B65750078E79A /* ViewController.swift in Sources */,
 				CE64E6B41F4B65750078E79A /* AppDelegate.swift in Sources */,
+				CE8AE05E1F50B088002DA9F7 /* FadeTransition.swift in Sources */,
+				CE8AE0501F5091E7002DA9F7 /* SplashView.swift in Sources */,
+				CE8AE0611F50C1CD002DA9F7 /* Extensions.swift in Sources */,
+				CE8AE0571F50B040002DA9F7 /* SpinerLayer.swift in Sources */,
+				CE8AE05F1F50B088002DA9F7 /* TimerEx.swift in Sources */,
 				CEC844611F50333700219B2D /* LoginView.swift in Sources */,
 				CEC844661F503CAF00219B2D /* Utilities.swift in Sources */,
 				CEC8445B1F5032F700219B2D /* Constants.swift in Sources */,
 				CE8AE04B1F505FFD002DA9F7 /* User.swift in Sources */,
+				CE8AE0551F50AD2B002DA9F7 /* TransitionSubmitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

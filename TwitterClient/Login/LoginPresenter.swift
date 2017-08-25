@@ -14,22 +14,23 @@ class LoginPresenter {
     weak private var loginView : LoginView?
     
     
-   
+    
     func attachView(view:LoginView){
         loginView = view
     }
     
     func twitterLogin() {
         
-        let loginBtn = TWTRLogInButton(logInCompletion: { session, error in
+        Twitter.sharedInstance().logIn(completion: { (session, error) in
             if (session != nil) {
+                
+                UserDefaults.standard.set(session?.userName, forKey: "userName")
+                
                 self.loginView?.sentSuccess(session: session!)
             } else {
                 self.loginView?.sentFailed(error: error)
             }
         })
-        
-        self.loginView?.addLoginBtn(btnLogin: loginBtn)
         
         
     }

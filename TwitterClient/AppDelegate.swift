@@ -17,9 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+      
+        // Initialize Twitter Kit
         Twitter.sharedInstance().start(withConsumerKey: Constants.twitterConsumerKey, consumerSecret: Constants.twitterConsumerSecret)
 
+        
+        
         
         return true
     }
@@ -46,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    // To handle the log in redirect back to your app, you must implement the application:openURL:options: method on TwitterKit to save the authentication token to disk.
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return Twitter.sharedInstance().application(app, open: url, options: options)
     }

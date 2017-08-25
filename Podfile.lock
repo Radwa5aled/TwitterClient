@@ -1,4 +1,7 @@
 PODS:
+  - NVActivityIndicatorView (3.7.0):
+    - NVActivityIndicatorView/Presenter (= 3.7.0)
+  - NVActivityIndicatorView/Presenter (3.7.0)
   - ObjectMapper (2.2.8)
   - SwiftyJSON (3.1.4)
   - TwitterCore (3.0.0)
@@ -6,16 +9,18 @@ PODS:
     - TwitterCore (>= 3.0.0)
 
 DEPENDENCIES:
+  - NVActivityIndicatorView
   - ObjectMapper
   - SwiftyJSON
   - TwitterKit
 
 SPEC CHECKSUMS:
+  NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TwitterCore: 8ce250be1eb34633a0e6acc89520d4165ec52c10
   TwitterKit: 21d0b22d67cb9a568cd8053972d0da7df2e0e9a0
 
-PODFILE CHECKSUM: fae0c1ac449b02ff73b63a763dcb9a32fa12fb04
+PODFILE CHECKSUM: f233b1bd6c17c2c53d1b00d924a468396dce38a2
 
 COCOAPODS: 1.3.1

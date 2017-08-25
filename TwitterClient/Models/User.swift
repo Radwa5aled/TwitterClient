@@ -40,7 +40,7 @@ class User : NSObject, NSCoding, Mappable{
 	var profileImageUrl : String?
 	var profileImageUrlHttps : String?
 	var profileLinkColor : String?
-	var profileLocation : AnyObject?
+	var profileLocation : String?
 	var profileSidebarBorderColor : String?
 	var profileSidebarFillColor : String?
 	var profileTextColor : String?
@@ -49,7 +49,7 @@ class User : NSObject, NSCoding, Mappable{
 	var screenName : String?
 	var statusesCount : Int?
 	var timeZone : String?
-	var url : AnyObject?
+	var url : String?
 	var utcOffset : Int?
 	var verified : Bool?
 
@@ -141,7 +141,7 @@ class User : NSObject, NSCoding, Mappable{
          profileImageUrl = aDecoder.decodeObject(forKey: "profile_image_url") as? String
          profileImageUrlHttps = aDecoder.decodeObject(forKey: "profile_image_url_https") as? String
          profileLinkColor = aDecoder.decodeObject(forKey: "profile_link_color") as? String
-         profileLocation = aDecoder.decodeObject(forKey: "profile_location") as? AnyObject
+         profileLocation = aDecoder.decodeObject(forKey: "profile_location") as? String
          profileSidebarBorderColor = aDecoder.decodeObject(forKey: "profile_sidebar_border_color") as? String
          profileSidebarFillColor = aDecoder.decodeObject(forKey: "profile_sidebar_fill_color") as? String
          profileTextColor = aDecoder.decodeObject(forKey: "profile_text_color") as? String
@@ -150,7 +150,7 @@ class User : NSObject, NSCoding, Mappable{
          screenName = aDecoder.decodeObject(forKey: "screen_name") as? String
          statusesCount = aDecoder.decodeObject(forKey: "statuses_count") as? Int
          timeZone = aDecoder.decodeObject(forKey: "time_zone") as? String
-         url = aDecoder.decodeObject(forKey: "url") as? AnyObject
+         url = aDecoder.decodeObject(forKey: "url") as? String
          utcOffset = aDecoder.decodeObject(forKey: "utc_offset") as? Int
          verified = aDecoder.decodeObject(forKey: "verified") as? Bool
 

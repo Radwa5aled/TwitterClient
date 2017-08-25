@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iK4-45-wIX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="3lR-9m-RlI">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="iK4-45-wIX" customClass="SplashViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u5g-8X-9lB"/>
+                        <viewControllerLayoutGuide type="bottom" id="82b-9G-wnk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XtP-m4-CtK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="kIF-NS-CY5">
+                                <rect key="frame" x="154" y="300" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="5Nf-Y5-Who"/>
+                                    <constraint firstAttribute="height" constant="67" id="fib-hl-CPk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.72549019609999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kIF-NS-CY5" firstAttribute="centerX" secondItem="XtP-m4-CtK" secondAttribute="centerX" id="FgM-TP-BHb"/>
+                            <constraint firstItem="kIF-NS-CY5" firstAttribute="centerY" secondItem="XtP-m4-CtK" secondAttribute="centerY" id="WOr-7f-G9P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="splashToLogin" animates="NO" modalTransitionStyle="crossDissolve" id="mt6-ox-auw"/>
+                        <segue destination="DbI-pz-f3n" kind="presentation" identifier="splashToFollowers" modalTransitionStyle="crossDissolve" id="MWj-h6-dC3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LHA-Oj-4de" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-881" y="77"/>
+        </scene>
+        <!--Followers View Controller-->
+        <scene sceneID="nN8-O6-K7k">
+            <objects>
+                <viewController storyboardIdentifier="FollowersViewController" id="2vp-2q-KHL" customClass="FollowersViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AwW-VY-FeN"/>
+                        <viewControllerLayoutGuide type="bottom" id="EAo-Vx-ndz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Uw-N9-Nzc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ptb-Ik-bWe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2l8-Xz-FW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="767.76611694152928"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -20,11 +76,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="daK-R8-MSI">
+                                <rect key="frame" x="94.5" y="131" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="daK-R8-MSI" secondAttribute="height" multiplier="1:1" id="HTo-gU-jCk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.72549019609999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="daK-R8-MSI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="FZB-uM-T4n"/>
+                            <constraint firstItem="daK-R8-MSI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="111" id="NQr-V2-3lE"/>
+                            <constraint firstItem="daK-R8-MSI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QeX-HK-d5E"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="daK-R8-MSI" id="QdL-XM-kUD"/>
+                        <segue destination="DbI-pz-f3n" kind="presentation" identifier="loginToFollowers" modalTransitionStyle="crossDissolve" id="rRI-8S-eIZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="76.911544227886068"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="elf-Db-jjx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DbI-pz-f3n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1H-Wk-mFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2vp-2q-KHL" kind="relationship" relationship="rootViewController" id="mrz-8l-NgV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Mj-p1-4l0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394.39999999999998" y="767.76611694152928"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter" width="275" height="220"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rRI-8S-eIZ"/>
+    </inferredMetricsTieBreakers>
 </document>
