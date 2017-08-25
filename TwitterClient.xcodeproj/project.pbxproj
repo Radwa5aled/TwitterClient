@@ -16,11 +16,11 @@
 		CE64E6BE1F4B65760078E79A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64E6BC1F4B65760078E79A /* LaunchScreen.storyboard */; };
 		CE64E6C91F4B65760078E79A /* TwitterClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64E6C81F4B65760078E79A /* TwitterClientTests.swift */; };
 		CE64E6D41F4B65760078E79A /* TwitterClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64E6D31F4B65760078E79A /* TwitterClientUITests.swift */; };
-		CE6D05041F4E74440021536B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D05031F4E74440021536B /* LoginPresenter.swift */; };
-		CE6D05061F4E74B00021536B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D05051F4E74B00021536B /* LoginView.swift */; };
-		CE6D05081F4E74D10021536B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D05071F4E74D10021536B /* LoginViewController.swift */; };
 		CE6D050A1F4E83400021536B /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6D05091F4E83400021536B /* SafariServices.framework */; };
-		CEB375B71F4E6A140006555F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB375B61F4E6A140006555F /* Constants.swift */; };
+		CEC8445B1F5032F700219B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445A1F5032F700219B2D /* Constants.swift */; };
+		CEC844601F50333700219B2D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445D1F50333700219B2D /* LoginPresenter.swift */; };
+		CEC844611F50333700219B2D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445E1F50333700219B2D /* LoginView.swift */; };
+		CEC844621F50333700219B2D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8445F1F50333700219B2D /* LoginViewController.swift */; };
 		ECB114901C36C636B65661CD /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EA97C2B44AB526C91064B5 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,11 +62,11 @@
 		CE64E6CF1F4B65760078E79A /* TwitterClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE64E6D31F4B65760078E79A /* TwitterClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterClientUITests.swift; sourceTree = "<group>"; };
 		CE64E6D51F4B65760078E79A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE6D05031F4E74440021536B /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		CE6D05051F4E74B00021536B /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		CE6D05071F4E74D10021536B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE6D05091F4E83400021536B /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		CEB375B61F4E6A140006555F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEC8445A1F5032F700219B2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEC8445D1F50333700219B2D /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		CEC8445E1F50333700219B2D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CEC8445F1F50333700219B2D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EA8964CDDC7D268F9D8B3FFD /* Pods-TwitterClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientUITests/Pods-TwitterClientUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBD7FBCE0F78CEE26DF72701 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,9 +116,6 @@
 		CE64E6A71F4B65750078E79A = {
 			isa = PBXGroup;
 			children = (
-				CE6D05021F4E73F50021536B /* Login */,
-				CE6D05011F4E6E630021536B /* Views */,
-				CEB375B51F4E6A000006555F /* SupportClasses */,
 				CE64E6B21F4B65750078E79A /* TwitterClient */,
 				CE64E6C71F4B65760078E79A /* TwitterClientTests */,
 				CE64E6D21F4B65760078E79A /* TwitterClientUITests */,
@@ -141,6 +138,9 @@
 		CE64E6B21F4B65750078E79A /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				CEC8445C1F50333700219B2D /* Login */,
+				CEC844591F5032F700219B2D /* SupportClasses */,
+				CE6D05011F4E6E630021536B /* Views */,
 				CE64E6B31F4B65750078E79A /* AppDelegate.swift */,
 				CE64E6B51F4B65750078E79A /* ViewController.swift */,
 				CE64E6BA1F4B65750078E79A /* Assets.xcassets */,
@@ -174,24 +174,25 @@
 				CE64E6BC1F4B65760078E79A /* LaunchScreen.storyboard */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		CE6D05021F4E73F50021536B /* Login */ = {
+		CEC844591F5032F700219B2D /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
-				CE6D05031F4E74440021536B /* LoginPresenter.swift */,
-				CE6D05051F4E74B00021536B /* LoginView.swift */,
-				CE6D05071F4E74D10021536B /* LoginViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		CEB375B51F4E6A000006555F /* SupportClasses */ = {
-			isa = PBXGroup;
-			children = (
-				CEB375B61F4E6A140006555F /* Constants.swift */,
+				CEC8445A1F5032F700219B2D /* Constants.swift */,
 			);
 			path = SupportClasses;
+			sourceTree = "<group>";
+		};
+		CEC8445C1F50333700219B2D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8445D1F50333700219B2D /* LoginPresenter.swift */,
+				CEC8445E1F50333700219B2D /* LoginView.swift */,
+				CEC8445F1F50333700219B2D /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D72E074D30033C6DE2237AB7 /* Frameworks */ = {
@@ -489,12 +490,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6D05081F4E74D10021536B /* LoginViewController.swift in Sources */,
-				CE6D05041F4E74440021536B /* LoginPresenter.swift in Sources */,
+				CEC844621F50333700219B2D /* LoginViewController.swift in Sources */,
+				CEC844601F50333700219B2D /* LoginPresenter.swift in Sources */,
 				CE64E6B61F4B65750078E79A /* ViewController.swift in Sources */,
 				CE64E6B41F4B65750078E79A /* AppDelegate.swift in Sources */,
-				CE6D05061F4E74B00021536B /* LoginView.swift in Sources */,
-				CEB375B71F4E6A140006555F /* Constants.swift in Sources */,
+				CEC844611F50333700219B2D /* LoginView.swift in Sources */,
+				CEC8445B1F5032F700219B2D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
