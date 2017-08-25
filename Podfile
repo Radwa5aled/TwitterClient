@@ -8,7 +8,8 @@ target 'TwitterClient' do
   # Pods for TwitterClient
   
   pod 'TwitterKit'
-  
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
   
 
   target 'TwitterClientTests' do
