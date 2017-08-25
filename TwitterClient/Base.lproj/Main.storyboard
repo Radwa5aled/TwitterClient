@@ -57,9 +57,28 @@
                     <view key="view" contentMode="scaleToFill" id="8Uw-N9-Nzc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9m-U3-NtB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2vp-2q-KHL" id="CPm-If-Lcc"/>
+                                    <outlet property="delegate" destination="2vp-2q-KHL" id="Wbp-qa-HC3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s9m-U3-NtB" firstAttribute="top" secondItem="AwW-VY-FeN" secondAttribute="bottom" id="6YD-S2-8n3"/>
+                            <constraint firstAttribute="trailing" secondItem="s9m-U3-NtB" secondAttribute="trailing" id="6na-3m-jGy"/>
+                            <constraint firstItem="EAo-Vx-ndz" firstAttribute="top" secondItem="s9m-U3-NtB" secondAttribute="bottom" id="H4N-DB-0eX"/>
+                            <constraint firstItem="s9m-U3-NtB" firstAttribute="leading" secondItem="8Uw-N9-Nzc" secondAttribute="leading" id="bzp-sV-cn6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ptb-Ik-bWe"/>
+                    <connections>
+                        <outlet property="followersTable" destination="s9m-U3-NtB" id="ped-y9-aYW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2l8-Xz-FW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +142,6 @@
         <image name="Twitter" width="275" height="220"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRI-8S-eIZ"/>
+        <segue reference="MWj-h6-dC3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ import TwitterKit
 class LoginViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     private let loginPresenter = LoginPresenter()
+    
     var btnSignIn: TKTransitionSubmitButton!
     
     @IBOutlet weak var imgLogo: UIImageView!

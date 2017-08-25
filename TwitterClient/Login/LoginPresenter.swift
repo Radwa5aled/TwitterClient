@@ -13,8 +13,6 @@ class LoginPresenter {
     
     weak private var loginView : LoginView?
     
-    
-    
     func attachView(view:LoginView){
         loginView = view
     }

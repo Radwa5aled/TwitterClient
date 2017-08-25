@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0CC8B2E7BE282766A0286755 /* Pods_TwitterClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439AA57248AE4D8340C15269 /* Pods_TwitterClientTests.framework */; };
 		76109A41C670D474FA4344E6 /* Pods_TwitterClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E229CBFD57EAD3B7D576275 /* Pods_TwitterClientUITests.framework */; };
+		CE4AD8471F50D1EA005ECC26 /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AD8461F50D1EA005ECC26 /* FollowersView.swift */; };
+		CE4AD8491F50D1FE005ECC26 /* FollowersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AD8481F50D1FE005ECC26 /* FollowersPresenter.swift */; };
+		CE4AD84D1F50D4BA005ECC26 /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AD84B1F50D4BA005ECC26 /* FollowersCell.swift */; };
+		CE4AD84E1F50D4BA005ECC26 /* FollowersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4AD84C1F50D4BA005ECC26 /* FollowersCell.xib */; };
 		CE64E6B41F4B65750078E79A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64E6B31F4B65750078E79A /* AppDelegate.swift */; };
 		CE64E6B61F4B65750078E79A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64E6B51F4B65750078E79A /* ViewController.swift */; };
 		CE64E6B91F4B65750078E79A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64E6B71F4B65750078E79A /* Main.storyboard */; };
@@ -65,6 +69,10 @@
 		6A14E0835283C50FBD64768A /* Pods-TwitterClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientTests/Pods-TwitterClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		8757E824396B669C1A8F2676 /* Pods-TwitterClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClientTests/Pods-TwitterClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E229CBFD57EAD3B7D576275 /* Pods_TwitterClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4AD8461F50D1EA005ECC26 /* FollowersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
+		CE4AD8481F50D1FE005ECC26 /* FollowersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersPresenter.swift; sourceTree = "<group>"; };
+		CE4AD84B1F50D4BA005ECC26 /* FollowersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
+		CE4AD84C1F50D4BA005ECC26 /* FollowersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowersCell.xib; sourceTree = "<group>"; };
 		CE64E6B01F4B65750078E79A /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE64E6B31F4B65750078E79A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE64E6B51F4B65750078E79A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE4AD84A1F50D491005ECC26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE4AD84B1F50D4BA005ECC26 /* FollowersCell.swift */,
+				CE4AD84C1F50D4BA005ECC26 /* FollowersCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE64E6A71F4B65750078E79A = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +193,7 @@
 				CEC844591F5032F700219B2D /* SupportClasses */,
 				CE8AE0531F50AD11002DA9F7 /* HelperClasses */,
 				CE8AE0471F505FC0002DA9F7 /* Models */,
+				CE4AD84A1F50D491005ECC26 /* Views */,
 				CE6D05011F4E6E630021536B /* Storyboards */,
 				CE64E6B31F4B65750078E79A /* AppDelegate.swift */,
 				CE64E6B51F4B65750078E79A /* ViewController.swift */,
@@ -249,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				CE8AE0631F50C41B002DA9F7 /* FollowersViewController.swift */,
+				CE4AD8461F50D1EA005ECC26 /* FollowersView.swift */,
+				CE4AD8481F50D1FE005ECC26 /* FollowersPresenter.swift */,
 			);
 			path = Followers;
 			sourceTree = "<group>";
@@ -256,10 +276,10 @@
 		CEC844591F5032F700219B2D /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
-				CEC8445A1F5032F700219B2D /* Constants.swift */,
 				CEC844631F5034DA00219B2D /* NetworkHelper.swift */,
-				CEC844651F503CAF00219B2D /* Utilities.swift */,
 				CE8AE0451F5055A1002DA9F7 /* AccessLayer.swift */,
+				CEC8445A1F5032F700219B2D /* Constants.swift */,
+				CEC844651F503CAF00219B2D /* Utilities.swift */,
 				CE8AE0601F50C1CD002DA9F7 /* Extensions.swift */,
 			);
 			path = SupportClasses;
@@ -408,6 +428,7 @@
 				CE64E6BE1F4B65760078E79A /* LaunchScreen.storyboard in Resources */,
 				CE64E6BB1F4B65750078E79A /* Assets.xcassets in Resources */,
 				CE64E6B91F4B65750078E79A /* Main.storyboard in Resources */,
+				CE4AD84E1F50D4BA005ECC26 /* FollowersCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,12 +611,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4AD8491F50D1FE005ECC26 /* FollowersPresenter.swift in Sources */,
 				CE8AE04A1F505FFD002DA9F7 /* ModFollowers.swift in Sources */,
 				CE8AE0521F5091FC002DA9F7 /* SplashPresenter.swift in Sources */,
 				CEC844641F5034DA00219B2D /* NetworkHelper.swift in Sources */,
 				CE8AE05C1F50B088002DA9F7 /* BubbleTransition.swift in Sources */,
 				CE8AE05D1F50B088002DA9F7 /* CGRectEx.swift in Sources */,
 				CEC844621F50333700219B2D /* LoginViewController.swift in Sources */,
+				CE4AD8471F50D1EA005ECC26 /* FollowersView.swift in Sources */,
 				CE8AE0641F50C41B002DA9F7 /* FollowersViewController.swift in Sources */,
 				CE8AE04E1F5091CA002DA9F7 /* SplashViewController.swift in Sources */,
 				CE8AE0461F5055A1002DA9F7 /* AccessLayer.swift in Sources */,
@@ -609,6 +632,7 @@
 				CE8AE05F1F50B088002DA9F7 /* TimerEx.swift in Sources */,
 				CEC844611F50333700219B2D /* LoginView.swift in Sources */,
 				CEC844661F503CAF00219B2D /* Utilities.swift in Sources */,
+				CE4AD84D1F50D4BA005ECC26 /* FollowersCell.swift in Sources */,
 				CEC8445B1F5032F700219B2D /* Constants.swift in Sources */,
 				CE8AE04B1F505FFD002DA9F7 /* User.swift in Sources */,
 				CE8AE0551F50AD2B002DA9F7 /* TransitionSubmitButton.swift in Sources */,
