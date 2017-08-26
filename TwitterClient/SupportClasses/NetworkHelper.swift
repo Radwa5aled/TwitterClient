@@ -46,6 +46,7 @@ class NetworkHelper {
                 
                 callbackNoInternet!()
                 
+                return
             }
             
             print("✅ responseData>>  \(JSON(data: responseData!))")

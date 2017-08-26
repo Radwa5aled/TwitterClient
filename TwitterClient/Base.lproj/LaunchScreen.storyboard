@@ -20,7 +20,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="oUu-jY-lMa">
+                                <rect key="frame" x="154" y="300" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="asF-xS-zGf"/>
+                                    <constraint firstAttribute="width" constant="67" id="bIz-of-NwV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.086274509803921567" green="0.72549019607843135" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oUu-jY-lMa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0uN-Bd-UgE"/>
+                            <constraint firstItem="oUu-jY-lMa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yZA-W2-Ki1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,4 +41,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter" width="275" height="220"/>
+    </resources>
 </document>

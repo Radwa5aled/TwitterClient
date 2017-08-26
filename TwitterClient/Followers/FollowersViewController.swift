@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+import TwitterKit
 
 class FollowersViewController: UIViewController {
     
@@ -31,7 +33,8 @@ class FollowersViewController: UIViewController {
         self.followersTable.register(UINib(nibName: "FollowersCell",bundle: nil), forCellReuseIdentifier: "FollowersCell")
        
         followersTable.rowHeight = UITableViewAutomaticDimension
-        followersTable.estimatedRowHeight = 96
+        followersTable.estimatedRowHeight = 88
+        
         
     }
     
@@ -41,15 +44,31 @@ class FollowersViewController: UIViewController {
     }
     
     
-    /*
+  
+    
+
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "followerToTimline" {
+            
+            let userTimlineViewController:UserTimlineViewController = segue.destination as! UserTimlineViewController
+
+            if let selectedRowIndexPath = followersTable.indexPathForSelectedRow {
+                
+                 userTimlineViewController.userData = followersArr[selectedRowIndexPath.row]
+                
+            }
+            
+           
+        }
+        
      }
-     */
+ 
     
 }
 
@@ -72,6 +91,7 @@ extension FollowersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lblName.text = data.name
         cell.lblUserName.text = "@" + data.screenName!
         cell.lblDesc.text = data.descriptionField
+        cell.imgProfile.kf.setImage(with: URL(string: data.profileImageUrl!))
         
         return cell
     }
@@ -79,6 +99,7 @@ extension FollowersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+         self.performSegue(withIdentifier: "followerToTimline", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

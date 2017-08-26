@@ -16,12 +16,18 @@ class User : NSObject, NSCoding, Mappable{
 	var defaultProfile : Bool?
 	var defaultProfileImage : Bool?
 	var descriptionField : String?
+    
+    var entities : Entity?
+    
 	var favouritesCount : Int?
 	var followRequestSent : Bool?
 	var followersCount : Int?
 	var following : Bool?
 	var friendsCount : Int?
 	var geoEnabled : Bool?
+    
+    var hasExtendedProfile : Bool?
+    
 	var id : Int?
 	var idStr : String?
 	var isTranslationEnabled : Bool?
@@ -49,6 +55,9 @@ class User : NSObject, NSCoding, Mappable{
 	var screenName : String?
 	var statusesCount : Int?
 	var timeZone : String?
+    
+    var translatorType : String?
+    
 	var url : String?
 	var utcOffset : Int?
 	var verified : Bool?
@@ -103,6 +112,11 @@ class User : NSObject, NSCoding, Mappable{
 		url <- map["url"]
 		utcOffset <- map["utc_offset"]
 		verified <- map["verified"]
+        
+        entities <- map["entities"]
+        geoEnabled <- map["geo_enabled"]
+        translatorType <- map["translator_type"]
+        
 		
 	}
 
@@ -153,6 +167,11 @@ class User : NSObject, NSCoding, Mappable{
          url = aDecoder.decodeObject(forKey: "url") as? String
          utcOffset = aDecoder.decodeObject(forKey: "utc_offset") as? Int
          verified = aDecoder.decodeObject(forKey: "verified") as? Bool
+        
+        translatorType = aDecoder.decodeObject(forKey: "translator_type") as? String
+        hasExtendedProfile = aDecoder.decodeObject(forKey: "has_extended_profile") as? Bool
+        entities = aDecoder.decodeObject(forKey: "entities") as? Entity
+
 
 	}
 
@@ -285,6 +304,18 @@ class User : NSObject, NSCoding, Mappable{
 		if verified != nil{
 			aCoder.encode(verified, forKey: "verified")
 		}
+        
+        if entities != nil{
+            aCoder.encode(entities, forKey: "entities")
+        }
+        
+        if hasExtendedProfile != nil{
+            aCoder.encode(hasExtendedProfile, forKey: "has_extended_profile")
+        }
+        
+        if translatorType != nil{
+            aCoder.encode(translatorType, forKey: "translator_type")
+        }
 
 	}
 

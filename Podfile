@@ -11,6 +11,7 @@ target 'TwitterClient' do
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
   pod 'NVActivityIndicatorView'
+  pod 'Kingfisher'
   
 
   target 'TwitterClientTests' do
