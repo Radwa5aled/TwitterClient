@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import RKParallaxEffect
 
 class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
 
@@ -17,6 +18,7 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
      var userTimlineArr: [ModUserTimline] = []
      var tweets: [Any] = []
     
+     var parallaxEffect: RKParallaxEffect!
     
     @IBOutlet weak var imgCover: UIImageView!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -46,6 +48,9 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
         
         profileTable.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
 
+         parallaxEffect = RKParallaxEffect(tableView: profileTable)
+        
+        
         
         
     }
@@ -55,6 +60,13 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        parallaxEffect.isParallaxEffectEnabled = true
+        parallaxEffect.isFullScreenTapGestureRecognizerEnabled = true
+        parallaxEffect.isFullScreenPanGestureRecognizerEnabled = true
+    }
 
     /*
     // MARK: - Navigation

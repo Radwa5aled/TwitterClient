@@ -114,18 +114,21 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-Vx-SlH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="129" id="EzL-JF-cPh"/>
-                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuS-Wt-gjP">
                                             <rect key="frame" x="8" y="166.5" width="359" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19.5" id="lqo-7m-Ty4"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79s-52-H9U">
                                             <rect key="frame" x="8" y="190.5" width="359" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19.5" id="DU5-9o-KAb"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -152,6 +155,7 @@
                                         <constraint firstItem="79s-52-H9U" firstAttribute="leading" secondItem="uiP-au-Ppw" secondAttribute="leading" constant="8" id="hFr-su-ljm"/>
                                         <constraint firstItem="79s-52-H9U" firstAttribute="top" secondItem="nuS-Wt-gjP" secondAttribute="bottom" constant="4.5" id="mli-JC-pZ3"/>
                                         <constraint firstAttribute="bottom" secondItem="79s-52-H9U" secondAttribute="bottom" constant="5" id="vKs-3s-507"/>
+                                        <constraint firstItem="nuS-Wt-gjP" firstAttribute="top" secondItem="u8c-L6-lia" secondAttribute="bottom" constant="8.5" id="x67-Rq-z4E"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

@@ -12,6 +12,7 @@ target 'TwitterClient' do
   pod 'ObjectMapper'
   pod 'NVActivityIndicatorView'
   pod 'Kingfisher'
+  pod 'RKParallaxEffect'
   
 
   target 'TwitterClientTests' do
