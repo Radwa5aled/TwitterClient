@@ -34,6 +34,8 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
 
         // Do any additional setup after loading the view.
         
+        self.title = "Profile"
+        
         profileTable.estimatedRowHeight = 150
         profileTable.rowHeight = UITableViewAutomaticDimension
         
@@ -101,6 +103,8 @@ extension UserTimlineViewController: UITableViewDelegate, UITableViewDataSource 
          cell.configure(with: tweet as! TWTRTweet)
         
          cell.tweetView.showActionButtons = true
+        
+        cell.selectionStyle = .none
         
         
         return cell

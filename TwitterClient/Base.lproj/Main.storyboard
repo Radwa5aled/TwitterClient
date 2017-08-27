@@ -77,7 +77,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ptb-Ik-bWe">
-                        <barButtonItem key="rightBarButtonItem" title="lang" id="UC4-v0-tb9">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uTH-Sf-HCC"/>
+                        <barButtonItem key="rightBarButtonItem" image="global" id="UC4-v0-tb9">
                             <connections>
                                 <action selector="btnChangeLang:" destination="2vp-2q-KHL" id="D5g-dg-byL"/>
                             </connections>
@@ -104,7 +105,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qao-wT-KuL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qao-wT-KuL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="uiP-au-Ppw">
@@ -116,7 +117,7 @@
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuS-Wt-gjP">
-                                            <rect key="frame" x="8" y="166.5" width="359" height="19.5"/>
+                                            <rect key="frame" x="8" y="167" width="359" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="19.5" id="lqo-7m-Ty4"/>
                                             </constraints>
@@ -125,7 +126,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79s-52-H9U">
-                                            <rect key="frame" x="8" y="190.5" width="359" height="19.5"/>
+                                            <rect key="frame" x="8" y="191" width="359" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="19.5" id="DU5-9o-KAb"/>
                                             </constraints>
@@ -140,6 +141,11 @@
                                                 <constraint firstAttribute="height" constant="60" id="1CS-9a-KmT"/>
                                                 <constraint firstAttribute="width" constant="60" id="q3D-WN-JB2"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="7.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="daK-R8-MSI">
-                                <rect key="frame" x="94.5" y="131" width="187.5" height="187.5"/>
+                                <rect key="frame" x="95" y="131" width="187" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="daK-R8-MSI" secondAttribute="height" multiplier="1:1" id="HTo-gU-jCk"/>
                                 </constraints>
@@ -237,6 +243,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0Z-Dt-zy8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.086274509799999996" green="0.72549019609999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -250,8 +261,9 @@
     </scenes>
     <resources>
         <image name="Twitter" width="275" height="220"/>
+        <image name="global" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="75v-vt-m0G"/>
+        <segue reference="Y6l-vK-fQJ"/>
     </inferredMetricsTieBreakers>
 </document>

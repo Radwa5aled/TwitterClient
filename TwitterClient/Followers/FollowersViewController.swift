@@ -133,6 +133,8 @@ extension FollowersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FollowersCell") as! FollowersCell
         
+        cell.selectionStyle = .none
+        
         let data = followersArr[indexPath.row]
         
         cell.lblName.text = data.name
