@@ -13,6 +13,7 @@ target 'TwitterClient' do
   pod 'NVActivityIndicatorView'
   pod 'Kingfisher'
   pod 'RKParallaxEffect'
+  pod 'UIScrollView-InfiniteScroll'
   
 
   target 'TwitterClientTests' do

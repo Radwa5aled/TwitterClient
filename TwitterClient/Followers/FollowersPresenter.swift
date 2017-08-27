@@ -22,15 +22,28 @@ class FollowersPresenter {
         followersView = view
     }
     
-    func getFollowersData() {
+    func getFollowersData(curser: Int, infiniteRefresher: Bool, displayIndicator: Bool) {
         
         if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
             
             let client = TWTRAPIClient(userID: userID)
             
-            AccessLayer.apiGetFollowers(parameters: ["count": "10"], twitterClient: client, sucess: { (suc) in
+            let params: [String : Any]!
+            
+            if curser != 0 {
                 
-                self.followersView?.sentSuccess(followerData: suc)
+                params = ["count": "10", "cursor":"\(curser)"]
+                
+            }else {
+                
+                params = ["count": "10"]
+                
+            }
+            
+            AccessLayer.apiGetFollowers(parameters: params, twitterClient: client, sucess: { (suc) in
+                
+                
+                self.followersView?.sentSuccess(followerData: suc, append: infiniteRefresher)
                 
             }) { (err) in
                 if err == "fail" {

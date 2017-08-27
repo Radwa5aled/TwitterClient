@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import TwitterKit
+import UIScrollView_InfiniteScroll
 
 class FollowersViewController: UIViewController {
     
@@ -19,24 +20,40 @@ class FollowersViewController: UIViewController {
     var followersData:ModFollowers!
     var followersArr:[User] = []
     
+     let refresher = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
         followersPresenter.attachView(view: self)
-        followersPresenter.getFollowersData()
-       
+        followersPresenter.getFollowersData(curser: 0, infiniteRefresher: false, displayIndicator: true)
+        
         self.title = "@" + (UserDefaults.standard.object(forKey: "userName") as? String)!
         
         self.followersTable.register(FollowersCell.self, forCellReuseIdentifier: "FollowersCell")
         self.followersTable.register(UINib(nibName: "FollowersCell",bundle: nil), forCellReuseIdentifier: "FollowersCell")
-       
+        
         followersTable.rowHeight = UITableViewAutomaticDimension
         followersTable.estimatedRowHeight = 88
         
+        refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        followersTable.addSubview(refresher)
+        
+        followersTable.addInfiniteScroll { (UITableView) in
+            
+            if self.followersData.nextCursor! != 0 {
+                self.followersPresenter.getFollowersData(curser: self.followersData.nextCursor!, infiniteRefresher: true, displayIndicator: false)
+                
+            }else {
+                self.followersTable.finishInfiniteScroll()
+                
+            }
+        }
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.navigationBar.isHidden = false
@@ -48,7 +65,12 @@ class FollowersViewController: UIViewController {
     }
     
     
-  
+    
+    func refresh()
+    {
+        followersPresenter.getFollowersData(curser: 0, infiniteRefresher: false, displayIndicator: false)
+    }
+
     
 
      // MARK: - Navigation
@@ -145,14 +167,27 @@ extension FollowersViewController: FollowersView {
         
     }
     
-    func sentSuccess(followerData: ModFollowers) {
-        followersData = followerData
-        followersArr = followerData.users!
+    func sentSuccess(followerData: ModFollowers, append: Bool) {
+        
+        if append {
+            followersData = followerData
+            followersArr.append(contentsOf: followerData.users!)
+            
+        }else {
+            followersData = followerData
+            followersArr = followerData.users!
+        }
         
         followersTable.reloadData()
+        
+        refresher.endRefreshing()
+        followersTable.finishInfiniteScroll()
     }
     
     func sentFailed() {
+        
+        refresher.endRefreshing()
+        followersTable.finishInfiniteScroll()
         self.alert(title: "Error", message: "Something went wrong, Please try again!", viewController: self)
     }
     

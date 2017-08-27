@@ -9,6 +9,7 @@ PODS:
   - TwitterCore (3.0.0)
   - TwitterKit (3.1.0):
     - TwitterCore (>= 3.0.0)
+  - UIScrollView-InfiniteScroll (1.0.2)
 
 DEPENDENCIES:
   - Kingfisher
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - RKParallaxEffect
   - SwiftyJSON
   - TwitterKit
+  - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
@@ -26,7 +28,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TwitterCore: 8ce250be1eb34633a0e6acc89520d4165ec52c10
   TwitterKit: 21d0b22d67cb9a568cd8053972d0da7df2e0e9a0
+  UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: 44faa428defe7eb2cc65310a4547413b59c0195a
+PODFILE CHECKSUM: d49fd9ff1721d250cc1ad8b8bf8a14a9aaf8deec
 
 COCOAPODS: 1.3.1

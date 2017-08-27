@@ -11,7 +11,7 @@ import ObjectMapper
 
 class ModFollowers : NSObject, NSCoding, Mappable{
 
-	var nextCursor : Double?
+	var nextCursor : Int?
 	var nextCursorStr : String?
 	var previousCursor : Int?
 	var previousCursorStr : String?
@@ -40,7 +40,7 @@ class ModFollowers : NSObject, NSCoding, Mappable{
     */
     @objc required init(coder aDecoder: NSCoder)
 	{
-         nextCursor = aDecoder.decodeObject(forKey: "next_cursor") as? Double
+         nextCursor = aDecoder.decodeObject(forKey: "next_cursor") as? Int
          nextCursorStr = aDecoder.decodeObject(forKey: "next_cursor_str") as? String
          previousCursor = aDecoder.decodeObject(forKey: "previous_cursor") as? Int
          previousCursorStr = aDecoder.decodeObject(forKey: "previous_cursor_str") as? String
