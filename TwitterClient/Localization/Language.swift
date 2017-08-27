@@ -27,14 +27,14 @@ class Language{
     class func changeLanguages() {
         if currentLanguage() == "ar"{
             setAppLanguage(language: "en-US")
-            AppConstants.currentLanguage = 1
+            //AppConstants.currentLanguage = 1
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
             UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
             
         }
         else{
             setAppLanguage(language: "ar")
-            AppConstants.currentLanguage = 2
+            //AppConstants.currentLanguage = 2
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
             UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
         }

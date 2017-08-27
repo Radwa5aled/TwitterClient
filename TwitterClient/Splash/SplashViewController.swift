@@ -17,7 +17,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
         
         splashPresenter.attachView(view: self)
@@ -59,13 +59,24 @@ extension SplashViewController: SplashView {
         
         print("✅✅ go to followers from splash")
         
-        self.performSegue(withIdentifier: "splashToFollowers", sender: self)
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "splashToFollowers", sender: self)
+
+        }
+        
+        
         
     }
     
     func sentFailed() {
         
-        self.performSegue(withIdentifier: "splashToLogin", sender: self)
+        DispatchQueue.main.async {
+            
+            self.performSegue(withIdentifier: "splashToLogin", sender: self)
+
+        }
+        
         
     }
     

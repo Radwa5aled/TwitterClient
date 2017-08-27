@@ -11,7 +11,7 @@ class Initializer {
     
     class func getStoryBoard()-> UIStoryboard {
         
-        let storyBoard = UIStoryboard(name: StoryBoardIDs.storyboardName, bundle: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         return storyBoard
     }
     
@@ -23,7 +23,7 @@ class Initializer {
     }
     class func createNavigation()->UINavigationController {
         let storyboard = getStoryBoard()
-        let navigation = storyboard.instantiateViewController(withIdentifier: StoryBoardIDs.rootNC) as! UINavigationController
+        let navigation = storyboard.instantiateViewController(withIdentifier: "RootNC") as! UINavigationController
         return navigation
     }
     class func getWindow()->UIWindow{

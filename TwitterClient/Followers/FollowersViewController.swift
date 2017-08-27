@@ -26,7 +26,7 @@ class FollowersViewController: UIViewController {
         
         followersPresenter.attachView(view: self)
         followersPresenter.getFollowersData()
-        
+       
         self.title = "@" + (UserDefaults.standard.object(forKey: "userName") as? String)!
         
         self.followersTable.register(FollowersCell.self, forCellReuseIdentifier: "FollowersCell")
@@ -37,7 +37,11 @@ class FollowersViewController: UIViewController {
         
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.hidesBackButton = true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,6 +73,27 @@ class FollowersViewController: UIViewController {
         
      }
  
+    
+    @IBAction func btnChangeLang(_ sender: Any) {
+    
+        
+        Language.changeLanguages()
+        // changeButtonBG(sender)
+        let window = Initializer.getWindow()
+        let navigation = Initializer.createNavigation()
+        let homeVC = Initializer.createViewControllerWithId(storyBoardId: "FollowersViewController") as! FollowersViewController
+        
+        navigation.pushViewController(homeVC, animated: false)
+        window.rootViewController = navigation
+        
+        UIView.transition(with: window, duration: 0.2, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        Localizer.DoLangaueExchange()
+        print("licalized=\(Language.localizeStringForKey(word: "sign_in"))")
+        //self.alert(title: Language.localizeStringForKey(word: "sign_in"), message: "", viewController: self)
+    
+    }
+    
+    
     
 }
 

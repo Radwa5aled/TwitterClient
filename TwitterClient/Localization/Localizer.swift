@@ -42,8 +42,8 @@ extension UIApplication{
 }
 
 func swilizeLocalizedMethod(className:AnyClass,originalSelector:Selector,overrideSelector:Selector){
-    let originalMethod:Method =  class_getInstanceMethod(className,originalSelector)
-    let overrideMethod :Method = class_getInstanceMethod(className, overrideSelector)
+    let originalMethod =  class_getInstanceMethod(className,originalSelector)
+    let overrideMethod = class_getInstanceMethod(className, overrideSelector)
     
     if class_addMethod(className, originalSelector, method_getImplementation(overrideMethod), method_getTypeEncoding(overrideMethod)){
         class_replaceMethod(className, overrideSelector,method_getImplementation(originalMethod) , method_getTypeEncoding(originalMethod))

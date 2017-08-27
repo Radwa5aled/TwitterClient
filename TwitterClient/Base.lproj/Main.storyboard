@@ -37,14 +37,15 @@
                             <constraint firstItem="kIF-NS-CY5" firstAttribute="centerY" secondItem="XtP-m4-CtK" secondAttribute="centerY" id="WOr-7f-G9P"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Zz-uQ-BMA"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="splashToLogin" animates="NO" modalTransitionStyle="crossDissolve" id="mt6-ox-auw"/>
-                        <segue destination="DbI-pz-f3n" kind="presentation" identifier="splashToFollowers" modalTransitionStyle="crossDissolve" id="MWj-h6-dC3"/>
+                        <segue destination="4uZ-yc-cMW" kind="presentation" identifier="splashToFollowers" modalTransitionStyle="crossDissolve" id="75v-vt-m0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHA-Oj-4de" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-881" y="77"/>
+            <point key="canvasLocation" x="56.799999999999997" y="76.911544227886068"/>
         </scene>
         <!--Followers View Controller-->
         <scene sceneID="nN8-O6-K7k">
@@ -75,8 +76,13 @@
                             <constraint firstItem="s9m-U3-NtB" firstAttribute="leading" secondItem="8Uw-N9-Nzc" secondAttribute="leading" id="bzp-sV-cn6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ptb-Ik-bWe"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="ptb-Ik-bWe">
+                        <barButtonItem key="rightBarButtonItem" title="lang" id="UC4-v0-tb9">
+                            <connections>
+                                <action selector="btnChangeLang:" destination="2vp-2q-KHL" id="D5g-dg-byL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="followersTable" destination="s9m-U3-NtB" id="ped-y9-aYW"/>
                         <segue destination="W6i-b1-tXx" kind="show" identifier="followerToTimline" id="3Zf-Yw-yh6"/>
@@ -84,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2l8-Xz-FW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.79999999999995" y="767.76611694152928"/>
+            <point key="canvasLocation" x="1527.2" y="788.45577211394311"/>
         </scene>
         <!--User Timline View Controller-->
         <scene sceneID="SHK-i4-QTD">
@@ -182,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QrS-ug-V0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341.5999999999999" y="767.76611694152928"/>
+            <point key="canvasLocation" x="2280.8000000000002" y="767.76611694152928"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -212,36 +218,36 @@
                     </view>
                     <connections>
                         <outlet property="imgLogo" destination="daK-R8-MSI" id="QdL-XM-kUD"/>
-                        <segue destination="DbI-pz-f3n" kind="presentation" identifier="loginToFollowers" modalTransitionStyle="crossDissolve" id="rRI-8S-eIZ"/>
+                        <segue destination="4uZ-yc-cMW" kind="presentation" identifier="loginToFollowers" modalTransitionStyle="crossDissolve" id="Y6l-vK-fQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="76.911544227886068"/>
+            <point key="canvasLocation" x="972" y="76.911544227886068"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="elf-Db-jjx">
+        <scene sceneID="5gB-bK-QV8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Mj-p1-4l0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DbI-pz-f3n" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNC" automaticallyAdjustsScrollViewInsets="NO" id="4uZ-yc-cMW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1H-Wk-mFZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0Z-Dt-zy8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2vp-2q-KHL" kind="relationship" relationship="rootViewController" id="mrz-8l-NgV"/>
+                        <segue destination="2vp-2q-KHL" kind="relationship" relationship="rootViewController" id="PZw-nl-cXF"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ysn-M7-FPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394.39999999999998" y="767.76611694152928"/>
+            <point key="canvasLocation" x="588" y="788.45577211394311"/>
         </scene>
     </scenes>
     <resources>
         <image name="Twitter" width="275" height="220"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRI-8S-eIZ"/>
+        <segue reference="75v-vt-m0G"/>
     </inferredMetricsTieBreakers>
 </document>
