@@ -16,11 +16,11 @@
 # Third party libraries
 1. [TwitterKit](https://dev.twitter.com/twitterkit/ios/overview)
 2. [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
-  - Parse data to JSON and wraps the result of the Alamofire JSON response handler.
+   - Parse data to JSON and wraps the result of the Alamofire JSON response handler.
    
 3. [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
-  - Mapping JSON or string JSON to objects and Nested Object.
-  - ObjectMapper could generate Realm models and simple Alamofire extension that uses ObjectMapper to automatically map JSON response data     to Swift objects.
+   - Mapping JSON or string JSON to objects and Nested Object.
+   - ObjectMapper could generate Realm models and simple Alamofire extension that uses ObjectMapper to automatically map JSON response     data to Swift objects.
    
 4. [Kingfisher](https://github.com/onevcat/Kingfisher)
    - Could download images from url asynchronous and caching for UIImageView or UIButton.
