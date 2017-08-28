@@ -48,7 +48,7 @@ class UserTimlinePresenter  {
                 print("❌❌❌ no Internet in getTimlineData")
                 self.userTimelineView?.finishLoading()
                 
-                self.userTimelineView?.sentFailed(error: "The Internet connection appears to be offline")
+                self.userTimelineView?.sentFailed(error: Language.localizeStringForKey(word: "Internet_connection"))
                 
             })
             

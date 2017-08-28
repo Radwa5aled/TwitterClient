@@ -7,3 +7,6 @@
 */
 "ok"="OK";
 "sign_in"="Sign in";
+"something_went_wrong" = "Something went wrong, Please try again!";
+"Internet_connection" = "The Internet connection appears to be offline";
+"error" = "Error";

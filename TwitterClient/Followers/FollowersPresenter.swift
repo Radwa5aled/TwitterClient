@@ -64,8 +64,8 @@ class FollowersPresenter {
                     self.followersView?.sentSuccess(followerData: offlineCachedObject!, append: infiniteRefresher)
                 
                 }else {
-                    
-                    self.followersView?.sentFailed(error: "The Internet connection appears to be offline")
+                  
+                    self.followersView?.sentFailed(error: Language.localizeStringForKey(word: "Internet_connection"))
                 }
                 
                 self.followersView?.finishLoading()

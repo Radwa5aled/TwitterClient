@@ -5,5 +5,8 @@
   Created by Radwa on 8/26/17.
   Copyright © 2017 Eventus. All rights reserved.
 */
-"ok"="خسنا";
+"ok"="حسنا";
 "sign_in"="تسجيل الدخول";
+"something_went_wrong" = "حدث خطأ ما. أعد المحاولة من فضلك!";
+"Internet_connection" = "يبدو أن اتصال الإنترنت غير متصل";
+"error" = "خطأ";

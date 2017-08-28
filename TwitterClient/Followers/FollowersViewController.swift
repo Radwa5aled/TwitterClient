@@ -212,10 +212,10 @@ extension FollowersViewController: FollowersView {
         
         if error == "fail" {
             
-            self.alert(title: "Error", message: "Something went wrong, Please try again!", viewController: self)
+            self.alert(title: Language.localizeStringForKey(word: "error"), message: Language.localizeStringForKey(word: "something_went_wrong"), viewController: self)
         }else {
             
-            self.alert(title: "Error", message: error, viewController: self)
+            self.alert(title: Language.localizeStringForKey(word: "error"), message: error, viewController: self)
             
         }
         
