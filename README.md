@@ -14,5 +14,13 @@
 - MVP (Model-View-Presenter)
 
 # Third party libraries
-
+1. [TwitterKit](https://dev.twitter.com/twitterkit/ios/overview)
+2. [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+3. [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+4. [Kingfisher](https://github.com/onevcat/Kingfisher)
+5. [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
+6. [RKParallaxEffect](https://github.com/RahulKatariya/RKParallaxEffect)
+7. [UIScrollView-InfiniteScroll](https://github.com/pronebird/UIScrollView-InfiniteScroll)
+8. [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser)
+9. [TKSubmitTransition](https://github.com/entotsu/TKSubmitTransition)
 
