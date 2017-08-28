@@ -25,6 +25,8 @@ class UserTimlinePresenter  {
     
     func getTimlineData(userId:String) {
         
+        self.userTimelineView?.startLoading()
+        
         if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
             
             let client = TWTRAPIClient(userID: userID)
@@ -32,15 +34,19 @@ class UserTimlinePresenter  {
             AccessLayer.apiGetUserTimline(parameters: ["id": userId, "count": "10"], twitterClient: client, sucess: { (suc, tweetsSuc) in
                 
                 print("✅ \(suc.count)")
+                self.userTimelineView?.finishLoading()
                 
                 self.userTimelineView?.sentSuccess(userTimlineData: suc, tweetsData: tweetsSuc)
                 
             }, failure: { (err) in
                 
+                self.userTimelineView?.finishLoading()
                 self.userTimelineView?.sentFailed(error: err!)
+                
                 
             }, noInternet: { (noInternet) in
                 print("❌❌❌ no Internet in getTimlineData")
+                self.userTimelineView?.finishLoading()
                 
                 self.userTimelineView?.sentFailed(error: "The Internet connection appears to be offline")
                 

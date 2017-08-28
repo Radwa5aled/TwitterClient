@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import TwitterKit
 import UIScrollView_InfiniteScroll
+import NVActivityIndicatorView
 
 class FollowersViewController: UIViewController {
     
@@ -21,26 +22,37 @@ class FollowersViewController: UIViewController {
     var followersArr:[User] = []
     
      let refresher = UIRefreshControl()
+    var activityProgress: NVActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
+        // Add indicator
+        let progressSize = CGRect(x: self.view.center.x - 40.0, y: self.view.center.y - 40.0 - 64.0 , width: 80.0, height: 80.0)
+        activityProgress = self.setNVActivityIndicatorView(viewController: self, rectProgress: progressSize, progressType: .ballScale, progressColor: UIColor(red: 22/257, green: 185/257, blue: 237/257, alpha: 1.0))
+        
+        //
         followersPresenter.attachView(view: self)
         followersPresenter.getFollowersData(curser: 0, infiniteRefresher: false, displayIndicator: true)
         
+        //set navigation controller title
         self.title = "@" + (UserDefaults.standard.object(forKey: "userName") as? String)!
         
+        // Register followers cell
         self.followersTable.register(FollowersCell.self, forCellReuseIdentifier: "FollowersCell")
         self.followersTable.register(UINib(nibName: "FollowersCell",bundle: nil), forCellReuseIdentifier: "FollowersCell")
         
+        // Automatic Height for tableView
         followersTable.rowHeight = UITableViewAutomaticDimension
         followersTable.estimatedRowHeight = 88
         
+        // Add refresher to table view
         refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
         followersTable.addSubview(refresher)
         
+        // Add infinite scroll to table view 
         followersTable.addInfiniteScroll { (UITableView) in
             
             if self.followersData.nextCursor! != 0 {
@@ -51,6 +63,8 @@ class FollowersViewController: UIViewController {
                 
             }
         }
+        
+        
         
     }
     
@@ -69,6 +83,13 @@ class FollowersViewController: UIViewController {
     func refresh()
     {
         followersPresenter.getFollowersData(curser: 0, infiniteRefresher: false, displayIndicator: false)
+    }
+
+    func setIndicator()  {
+        let rectProgress = CGRect(x: self.view.center.x - 40.0, y: self.view.center.y - 40.0 - 64.0 , width: 80.0, height: 80.0)
+        self.activityProgress = NVActivityIndicatorView(frame: rectProgress, type: .ballScale, color: UIColor(red: 22/257, green: 185/257, blue: 237/257, alpha: 1.0), padding: 12)
+        self.view.addSubview(self.activityProgress!)
+        self.view.bringSubview(toFront: self.activityProgress!)
     }
 
     
@@ -162,11 +183,14 @@ extension FollowersViewController: UITableViewDelegate, UITableViewDataSource {
 extension FollowersViewController: FollowersView {
     
     func startLoading() {
-        
+         self.activityProgress?.startAnimating()
     }
     
     func finishLoading() {
         
+        refresher.endRefreshing()
+        followersTable.finishInfiniteScroll()
+        self.activityProgress?.stopAnimating()
     }
     
     func sentSuccess(followerData: ModFollowers, append: Bool) {
@@ -181,15 +205,10 @@ extension FollowersViewController: FollowersView {
         }
         
         followersTable.reloadData()
-        
-        refresher.endRefreshing()
-        followersTable.finishInfiniteScroll()
+       
     }
     
     func sentFailed(error:String) {
-        
-        refresher.endRefreshing()
-        followersTable.finishInfiniteScroll()
         
         if error == "fail" {
             

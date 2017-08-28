@@ -22,10 +22,14 @@ class SplashViewController: UIViewController {
         
         splashPresenter.attachView(view: self)
         
-        setIndicator()
+        // Add indicator
+        let progressSize = CGRect(x: self.view.bounds.width/2 - 67.0, y: self.view.bounds.height/2 - 67.0, width: 134.0, height: 134.0)
+        activityProgress = self.setNVActivityIndicatorView(viewController: self, rectProgress: progressSize, progressType: .ballScale, progressColor:UIColor.white)
+    
+        //check if there's stored accounts or not
         splashPresenter.getStoredAccount()
         
-        
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,12 +37,6 @@ class SplashViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setIndicator()  {
-        let rectProgress = CGRect(x: self.view.bounds.width/2 - 67.0, y: self.view.bounds.height/2 - 67.0, width: 134.0, height: 134.0)
-        self.activityProgress = NVActivityIndicatorView(frame: rectProgress, type: .ballScale, color: UIColor.white, padding: 12)
-        self.view.addSubview(self.activityProgress!)
-        self.view.bringSubview(toFront: self.activityProgress!)
-    }
     
     /*
      // MARK: - Navigation

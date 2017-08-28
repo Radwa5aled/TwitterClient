@@ -10,6 +10,7 @@ import UIKit
 import TwitterKit
 import RKParallaxEffect
 import SKPhotoBrowser
+import NVActivityIndicatorView
 
 class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
 
@@ -20,6 +21,7 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
      var tweets: [Any] = []
     
      var parallaxEffect: RKParallaxEffect!
+     var activityProgress: NVActivityIndicatorView?
     
     @IBOutlet weak var imgCover: UIImageView!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -34,28 +36,35 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    
+        userTimlinePresenter.attachView(view: self)
         
+        //set navigation controller title
         self.title = "@" + (userData.screenName ?? "")
         
+        //set user profile daTa
+        setUserData()
+        
+        // Add indicator
+        let progressSize = CGRect(x: self.view.center.x - 40.0, y: self.view.center.y - 40.0 - 64.0 , width: 80.0, height: 80.0)
+        activityProgress = self.setNVActivityIndicatorView(viewController: self, rectProgress: progressSize, progressType: .ballScale, progressColor: UIColor(red: 22/257, green: 185/257, blue: 237/257, alpha: 1.0))
+        
+        // Automatic Height for tableView
         profileTable.estimatedRowHeight = 150
         profileTable.rowHeight = UITableViewAutomaticDimension
         
-        userTimlinePresenter.attachView(view: self)
-        userTimlinePresenter.getTimlineData(userId: userData.idStr!)
-        
-        lblName.text = userData.name ?? ""
-        lblUserName.text = "@" + (userData.screenName ?? "")
-        imgProfile.kf.setImage(with: URL(string: userData.profileImageUrl ?? "") , placeholder: UIImage(named: "default_profile"), options: nil, progressBlock: nil, completionHandler: nil)
-        imgCover.kf.setImage(with: URL(string: userData.profileBannerUrl ?? ""), placeholder:  UIImage(named: "default_cover"), options: nil, progressBlock: nil, completionHandler: nil)
-        
-        
+        // Register Tweeter cell
         profileTable.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
 
+        //get tweets list
+        userTimlinePresenter.getTimlineData(userId: userData.idStr!)
+        
+        //Add parallax effect to table header
         parallaxEffect = RKParallaxEffect(tableView: profileTable)
         
         
+        // Add tap gesture to profile image view to present it
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UserTimlineViewController.animateImage(_:)))
-        
         imgProfile.isUserInteractionEnabled = true
         imgProfile.addGestureRecognizer(tapGestureRecognizer)
         
@@ -69,9 +78,20 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Customize parallax effect in table header
+        
         parallaxEffect.isParallaxEffectEnabled = true
         parallaxEffect.isFullScreenTapGestureRecognizerEnabled = true
         parallaxEffect.isFullScreenPanGestureRecognizerEnabled = true
+    }
+    
+    func setUserData() {
+        
+        lblName.text = userData.name ?? ""
+        lblUserName.text = "@" + (userData.screenName ?? "")
+        imgProfile.kf.setImage(with: URL(string: userData.profileImageUrl ?? "") , placeholder: UIImage(named: "default_profile"), options: nil, progressBlock: nil, completionHandler: nil)
+        imgCover.kf.setImage(with: URL(string: userData.profileBannerUrl ?? ""), placeholder:  UIImage(named: "default_cover"), options: nil, progressBlock: nil, completionHandler: nil)
+        
     }
 
     
@@ -148,11 +168,11 @@ extension UserTimlineViewController: UITableViewDelegate, UITableViewDataSource 
 extension UserTimlineViewController: UserTimelineView {
     
     func startLoading() {
-        
+         self.activityProgress?.startAnimating()
     }
     
     func finishLoading() {
-        
+        self.activityProgress?.stopAnimating()
     }
     
     func sentSuccess(userTimlineData: [ModUserTimline], tweetsData: [Any]) {
