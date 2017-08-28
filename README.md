@@ -16,11 +16,31 @@
 # Third party libraries
 1. [TwitterKit](https://dev.twitter.com/twitterkit/ios/overview)
 2. [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+  - Parse data to JSON and wraps the result of the Alamofire JSON response handler.
+   
 3. [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper)
+  - Mapping JSON or string JSON to objects and Nested Object.
+  - ObjectMapper could generate Realm models and simple Alamofire extension that uses ObjectMapper to automatically map JSON response data     to Swift objects.
+   
 4. [Kingfisher](https://github.com/onevcat/Kingfisher)
+   - Could download images from url asynchronous and caching for UIImageView or UIButton.
+   - Cancel downloading and process tasks.
+
 5. [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
+   - Has wide collection of loading Indicators with awesome animations.
+   
 6. [RKParallaxEffect](https://github.com/RahulKatariya/RKParallaxEffect)
+   - Create a parallax effect on TableHeaderView with Full Screen option that view the full image.
+
 7. [UIScrollView-InfiniteScroll](https://github.com/pronebird/UIScrollView-InfiniteScroll)
+   - Easy for implementation and use Swizzling.
+   - provide a handler block and could use it with table view, collection view and scroll view.
+
 8. [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser)
+   - Display one or array of images by providing either UIImage objects, or string of URL array.
+   - Handling and caching photos from web, Landscape handling.
+   - Swipe up/down to dismiss with animation and have download option.
+   
 9. [TKSubmitTransition](https://github.com/entotsu/TKSubmitTransition)
+   - You can find the “Sign in” button rolling and after that, next UIViewController will fade-in.
 
