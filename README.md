@@ -7,6 +7,7 @@
 - Splash Screen check if there's saved user credential then open user's followers directly, otherwise open Login screen.
 - Using TwitterKit SDK user can view it's followers with Pull to Refresh and Infinite Scrolling and cache followers for offline use.
 - Follower profile show follower information and latest 10 tweets with sticky header
+- User could like and share follower tweet
 - open profile image and background image in overlay view
 - localization
 
