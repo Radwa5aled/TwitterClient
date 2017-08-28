@@ -9,7 +9,7 @@
 - Follower profile show follower information and latest 10 tweets with sticky header
 - User could like and share follower tweet
 - open profile image and background image in overlay view
-- localization
+- localization using Swizzling
 
 # Architecture Design Pattern
 - MVP (Model-View-Presenter)
