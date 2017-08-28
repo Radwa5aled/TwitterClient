@@ -44,7 +44,14 @@ class NetworkHelper {
             if connectionError != nil {
                 print("❌ \(String(describing: connectionError?.localizedDescription))")
                 
-                callbackNoInternet!()
+                if Utilities.shared.isConnectedToNetwork() == true {
+                    
+                    callbackSwiftyDic!(JSON.null, connectionError)
+                    
+                }else {
+                    
+                     callbackNoInternet!()
+                }
                 
                 return
             }
@@ -55,7 +62,6 @@ class NetworkHelper {
                 
                 callbackSwiftyDic!(JSON.null, NSError.self as? Error)
 
-                
             }else {
                 callbackSwiftyDic!(JSON(data: responseData!), nil)
 

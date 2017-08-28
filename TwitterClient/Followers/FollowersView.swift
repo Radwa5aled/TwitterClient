@@ -13,6 +13,6 @@ protocol FollowersView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
     func sentSuccess(followerData: ModFollowers, append: Bool)
-    func sentFailed()
+    func sentFailed(error:String)
     
 }

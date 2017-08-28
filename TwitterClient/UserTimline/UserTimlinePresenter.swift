@@ -31,21 +31,20 @@ class UserTimlinePresenter  {
             
             AccessLayer.apiGetUserTimline(parameters: ["id": userId, "count": "10"], twitterClient: client, sucess: { (suc, tweetsSuc) in
                 
-                print("✅ \(suc)")
+                print("✅ \(suc.count)")
                 
                 self.userTimelineView?.sentSuccess(userTimlineData: suc, tweetsData: tweetsSuc)
                 
-            }) { (err) in
-                if err == "fail" {
-                    
-                     self.userTimelineView?.sentFailed()
-                    
-                }else {
-                    print("❌❌❌ noInternet")
-                    
-                }
+            }, failure: { (err) in
                 
-            }
+                self.userTimelineView?.sentFailed(error: err!)
+                
+            }, noInternet: { (noInternet) in
+                print("❌❌❌ no Internet in getTimlineData")
+                
+                self.userTimelineView?.sentFailed(error: "The Internet connection appears to be offline")
+                
+            })
             
         }
         

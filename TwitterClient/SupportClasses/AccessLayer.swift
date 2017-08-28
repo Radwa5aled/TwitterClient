@@ -14,12 +14,24 @@ import ObjectMapper
 class AccessLayer {
     
     //#MARK:- GetFollowers
-   internal static func apiGetFollowers(parameters: [String : Any], twitterClient: TWTRAPIClient ,sucess: @escaping ((_ followersInfo: ModFollowers) -> Void), failure:@escaping (( _ NSError: String?) -> Void))
+   internal static func apiGetFollowers(parameters: [String : Any], twitterClient: TWTRAPIClient ,sucess: @escaping ((_ followersInfo: ModFollowers) -> Void), failure:@escaping (( _ NSError: String?) -> Void), noInternet:@escaping ((_ followersCachedInfo: ModFollowers?) -> Void))
     {
-
+        
         NetworkHelper.networkRequester(domainUrl: nil, service: Constants.getFollowersUrl, hTTPMethod: .get, parameters: parameters, twitterClient: twitterClient, callbackNoInternet: {
             
-            failure("")
+            
+            if let cachedVersion = UserDefaults.standard.object(forKey: "cachedFollowers") as? NSData {
+                
+                // use the cached object
+                let obj = NSKeyedUnarchiver.unarchiveObject(with: cachedVersion as Data) as! ModFollowers
+                 noInternet(obj)
+                
+            }else {
+                
+                print("❌ no cacheeeee")
+                noInternet(nil)
+                
+            }
             
         }) { (json, error) in
             
@@ -27,12 +39,18 @@ class AccessLayer {
                 
                 let res = ModFollowers(JSON: json.dictionaryObject!)
                 
+                //cache followers object for offline mode
+                UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: res!), forKey: "cachedFollowers")
                 
                 sucess(res!)
                 
             }else {
                 
-                failure("fail")
+                if let err = error?.localizedDescription {
+                    failure(err)
+                }else {
+                    failure("fail")
+                }
             }
             
         }
@@ -40,12 +58,12 @@ class AccessLayer {
         
     }
     
-    internal static func apiGetUserTimline(parameters: [String : Any], twitterClient: TWTRAPIClient ,sucess: @escaping ((_ timlineInfo: [ModUserTimline], _ tweets: [Any]) -> Void), failure:@escaping (( _ NSError: String?) -> Void))
+    internal static func apiGetUserTimline(parameters: [String : Any], twitterClient: TWTRAPIClient ,sucess: @escaping ((_ timlineInfo: [ModUserTimline], _ tweets: [Any]) -> Void), failure:@escaping (( _ NSError: String?) -> Void), noInternet:@escaping (( _ NSError: String?) -> Void))
     {
         
         NetworkHelper.networkRequester(domainUrl: nil, service: Constants.getUserTimline, hTTPMethod: .get, parameters: parameters, twitterClient: twitterClient, callbackNoInternet: {
             
-            failure("")
+             noInternet("")
             
         }) { (json, error) in
             
@@ -59,7 +77,11 @@ class AccessLayer {
                 
             }else {
                 
-                failure("fail")
+                if let err = error?.localizedDescription {
+                    failure(err)
+                }else {
+                    failure("fail")
+                }
             }
             
         }

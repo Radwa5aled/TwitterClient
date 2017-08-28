@@ -186,11 +186,21 @@ extension FollowersViewController: FollowersView {
         followersTable.finishInfiniteScroll()
     }
     
-    func sentFailed() {
+    func sentFailed(error:String) {
         
         refresher.endRefreshing()
         followersTable.finishInfiniteScroll()
-        self.alert(title: "Error", message: "Something went wrong, Please try again!", viewController: self)
+        
+        if error == "fail" {
+            
+            self.alert(title: "Error", message: "Something went wrong, Please try again!", viewController: self)
+        }else {
+            
+            self.alert(title: "Error", message: error, viewController: self)
+            
+        }
+        
+        
     }
     
 }

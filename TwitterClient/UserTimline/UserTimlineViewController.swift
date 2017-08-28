@@ -35,7 +35,7 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
 
         // Do any additional setup after loading the view.
         
-        self.title = "Profile"
+        self.title = "@" + (userData.screenName ?? "")
         
         profileTable.estimatedRowHeight = 150
         profileTable.rowHeight = UITableViewAutomaticDimension
@@ -45,8 +45,8 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
         
         lblName.text = userData.name ?? ""
         lblUserName.text = "@" + (userData.screenName ?? "")
-        imgProfile.kf.setImage(with: URL(string: userData.profileImageUrl ?? "") , placeholder: UIImage(named: "Twitter"), options: nil, progressBlock: nil, completionHandler: nil)
-        imgCover.kf.setImage(with: URL(string: userData.profileBannerUrl ?? ""), placeholder:  UIImage(named: "Twitter"), options: nil, progressBlock: nil, completionHandler: nil)
+        imgProfile.kf.setImage(with: URL(string: userData.profileImageUrl ?? "") , placeholder: UIImage(named: "default_profile"), options: nil, progressBlock: nil, completionHandler: nil)
+        imgCover.kf.setImage(with: URL(string: userData.profileBannerUrl ?? ""), placeholder:  UIImage(named: "default_cover"), options: nil, progressBlock: nil, completionHandler: nil)
         
         
         profileTable.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
@@ -163,8 +163,16 @@ extension UserTimlineViewController: UserTimelineView {
     }
     
     
-    func sentFailed() {
-        self.alert(title: "Error", message: "Something went wrong, Please try again!", viewController: self)
+    func sentFailed(error:String) {
+        
+        if error == "fail" {
+            
+            self.alert(title: "Error", message: "Something went wrong, Please try again!", viewController: self)
+        }else {
+            
+            self.alert(title: "Error", message: error, viewController: self)
+            
+        }
     }
     
 }

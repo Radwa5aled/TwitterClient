@@ -13,6 +13,6 @@ protocol UserTimelineView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
     func sentSuccess(userTimlineData: [ModUserTimline], tweetsData: [Any])
-    func sentFailed()
+    func sentFailed(error:String)
     
 }

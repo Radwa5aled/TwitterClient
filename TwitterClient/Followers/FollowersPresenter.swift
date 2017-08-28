@@ -40,22 +40,29 @@ class FollowersPresenter {
                 
             }
             
+            
             AccessLayer.apiGetFollowers(parameters: params, twitterClient: client, sucess: { (suc) in
-                
-                
+               
                 self.followersView?.sentSuccess(followerData: suc, append: infiniteRefresher)
+
+            }, failure: { (err) in
+                    
+                self.followersView?.sentFailed(error: err!)
+                    
+            }, noInternet: { (offlineCachedObject) in
+                print("❌❌❌ no Internet in getFollowersData")
+               
+                if offlineCachedObject != nil {
+                    
+                    self.followersView?.sentSuccess(followerData: offlineCachedObject!, append: infiniteRefresher)
                 
-            }) { (err) in
-                if err == "fail" {
-                    
-                    self.followersView?.sentFailed()
-                    
                 }else {
-                    print("❌❌❌ noInternet")
                     
+                    self.followersView?.sentFailed(error: "The Internet connection appears to be offline")
                 }
                 
-            }
+            })
+            
             
         }
         
