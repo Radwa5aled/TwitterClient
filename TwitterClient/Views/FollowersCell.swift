@@ -15,11 +15,18 @@ class FollowersCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
+    @IBOutlet weak var shadowView: UIView!
 
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.shadowView.layer.shadowColor = UIColor.lightGray.cgColor
+        self.shadowView.layer.shadowOpacity = 1
+        self.shadowView.layer.shadowOffset = CGSize.zero
+        self.shadowView.layer.shadowRadius = 3
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
