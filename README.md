@@ -38,7 +38,7 @@
 
 8. [SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser)
    - Display one or array of images by providing either UIImage objects, or string of URL array.
-   - Handling and caching photos from web, Landscape handling.
+   - Handling and caching photos from web, Landscape handling and Zoom in
    - Swipe up/down to dismiss with animation and have download option.
    
 9. [TKSubmitTransition](https://github.com/entotsu/TKSubmitTransition)
