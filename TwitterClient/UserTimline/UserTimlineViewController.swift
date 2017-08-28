@@ -9,6 +9,7 @@
 import UIKit
 import TwitterKit
 import RKParallaxEffect
+import SKPhotoBrowser
 
 class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
 
@@ -42,18 +43,21 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
         userTimlinePresenter.attachView(view: self)
         userTimlinePresenter.getTimlineData(userId: userData.idStr!)
         
-        lblName.text = userData.name
-        lblUserName.text = "@" + userData.screenName!
-        imgProfile.kf.setImage(with: URL(string: userData.profileImageUrl!) , placeholder: UIImage(named: "Twitter"), options: nil, progressBlock: nil, completionHandler: nil)
-        imgCover.kf.setImage(with: URL(string: userData.profileBackgroundImageUrl!), placeholder:  UIImage(named: "Twitter"), options: nil, progressBlock: nil, completionHandler: nil)
+        lblName.text = userData.name ?? ""
+        lblUserName.text = "@" + (userData.screenName ?? "")
+        imgProfile.kf.setImage(with: URL(string: userData.profileImageUrl ?? "") , placeholder: UIImage(named: "Twitter"), options: nil, progressBlock: nil, completionHandler: nil)
+        imgCover.kf.setImage(with: URL(string: userData.profileBannerUrl ?? ""), placeholder:  UIImage(named: "Twitter"), options: nil, progressBlock: nil, completionHandler: nil)
         
         
         profileTable.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
 
-         parallaxEffect = RKParallaxEffect(tableView: profileTable)
+        parallaxEffect = RKParallaxEffect(tableView: profileTable)
         
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UserTimlineViewController.animateImage(_:)))
         
+        imgProfile.isUserInteractionEnabled = true
+        imgProfile.addGestureRecognizer(tapGestureRecognizer)
         
     }
 
@@ -70,6 +74,21 @@ class UserTimlineViewController: UIViewController, TWTRTweetViewDelegate {
         parallaxEffect.isFullScreenPanGestureRecognizerEnabled = true
     }
 
+    
+    func animateImage(_ sender:AnyObject) {
+    
+        var images = [SKPhoto]()
+        let photo = SKPhoto.photoWithImageURL(userData.profileImageUrl!)
+        photo.shouldCachePhotoURLImage = true // you can use image cache by true(NSCache)
+        images.append(photo)
+        
+        let browsers = SKPhotoBrowser(originImage: imgProfile.image ?? UIImage(), photos: images, animatedFromView: imgProfile)
+      //  let browsers = SKPhotoBrowser(photos: images)
+        browsers.initializePageIndex(0)
+        present(browsers, animated: true, completion: {})
+    }
+    
+    
     /*
     // MARK: - Navigation
 

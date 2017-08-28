@@ -14,7 +14,7 @@ target 'TwitterClient' do
   pod 'Kingfisher'
   pod 'RKParallaxEffect'
   pod 'UIScrollView-InfiniteScroll'
-  
+  pod 'SKPhotoBrowser'
 
   target 'TwitterClientTests' do
     inherit! :search_paths

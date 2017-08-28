@@ -56,11 +56,11 @@
                         <viewControllerLayoutGuide type="bottom" id="EAo-Vx-ndz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Uw-N9-Nzc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9m-U3-NtB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2vp-2q-KHL" id="CPm-If-Lcc"/>
@@ -70,12 +70,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s9m-U3-NtB" firstAttribute="top" secondItem="AwW-VY-FeN" secondAttribute="bottom" constant="-64" id="6YD-S2-8n3"/>
+                            <constraint firstItem="s9m-U3-NtB" firstAttribute="top" secondItem="AwW-VY-FeN" secondAttribute="bottom" id="6YD-S2-8n3"/>
                             <constraint firstAttribute="trailing" secondItem="s9m-U3-NtB" secondAttribute="trailing" id="6na-3m-jGy"/>
                             <constraint firstItem="EAo-Vx-ndz" firstAttribute="top" secondItem="s9m-U3-NtB" secondAttribute="bottom" id="H4N-DB-0eX"/>
                             <constraint firstItem="s9m-U3-NtB" firstAttribute="leading" secondItem="8Uw-N9-Nzc" secondAttribute="leading" id="bzp-sV-cn6"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="ptb-Ik-bWe">
                         <barButtonItem key="backBarButtonItem" title=" " id="uTH-Sf-HCC"/>
                         <barButtonItem key="rightBarButtonItem" image="global" id="UC4-v0-tb9">
@@ -102,11 +103,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Oam-ll-vi0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CPh-TJ-6zY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qao-wT-KuL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="uiP-au-Ppw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
@@ -188,6 +189,7 @@
                             <constraint firstAttribute="trailing" secondItem="Qao-wT-KuL" secondAttribute="trailing" id="p5b-9r-dTO"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="imgCover" destination="gmh-Vx-SlH" id="Fvp-AW-2ID"/>
                         <outlet property="imgProfile" destination="u8c-L6-lia" id="ICQ-mZ-PML"/>
@@ -213,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="daK-R8-MSI">
-                                <rect key="frame" x="95" y="131" width="187" height="188"/>
+                                <rect key="frame" x="94" y="131" width="187" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="daK-R8-MSI" secondAttribute="height" multiplier="1:1" id="HTo-gU-jCk"/>
                                 </constraints>
@@ -261,7 +263,7 @@
     </scenes>
     <resources>
         <image name="Twitter" width="275" height="220"/>
-        <image name="global" width="16" height="16"/>
+        <image name="global" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y6l-vK-fQJ"/>

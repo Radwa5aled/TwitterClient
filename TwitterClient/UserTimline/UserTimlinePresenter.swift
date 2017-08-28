@@ -31,7 +31,7 @@ class UserTimlinePresenter  {
             
             AccessLayer.apiGetUserTimline(parameters: ["id": userId, "count": "10"], twitterClient: client, sucess: { (suc, tweetsSuc) in
                 
-               print("✅" + (suc[0].createdAt!))
+                print("✅ \(suc)")
                 
                 self.userTimelineView?.sentSuccess(userTimlineData: suc, tweetsData: tweetsSuc)
                 
